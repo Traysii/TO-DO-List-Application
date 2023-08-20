@@ -1,0 +1,20 @@
+{% extends 'todo/base.html' %}
+{% block title %} DETAIL {% endblock %}
+
+{% block content %}
+
+<div class="header-bar">
+    <a href="{% url 'list' %}">&#8592; Go Back</a>
+</div>
+
+<div class="detail-body">
+    {% if task.description == '' %}
+        <h2>Task:</h2><h3>&ensp; - {{ task}}</h3>
+        <h2>Description:</h2><h3>&ensp; - None</h3>
+    {% else%}
+        <h2>Task:</h2><h3>&ensp; - {{ task}}</h3>
+        <h2>Description: </h2><h3>&ensp; - {{ task.description }}</h3>
+    {% endif %}
+</div>
+    
+{% endblock %}
